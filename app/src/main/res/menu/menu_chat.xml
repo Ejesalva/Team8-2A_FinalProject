@@ -4,12 +4,10 @@
     tools:context="com.example.elijah.team8_2a_finalproject.UserAlbum">
     <item android:id="@+id/profile" android:title="@string/profile"
         android:orderInCategory="100" app:showAsAction="never" />
-    <item android:id="@+id/add_album" android:title="@string/add_album"
-        android:orderInCategory="100" app:showAsAction="never" />
     <item android:id="@+id/logout" android:title="@string/logout"
         android:orderInCategory="100" app:showAsAction="never" />
-    <item android:id="@+id/otherAlbumn" android:title="@string/other_albumn"
+    <item android:id="@+id/yourAlbumn" android:title="@string/your_albumn"
         android:orderInCategory="100" app:showAsAction="always" />
-    <item android:id="@+id/chat" android:title="@string/title_activity_chat"
+    <item android:id="@+id/otherAlbumn" android:title="@string/other_albumn"
         android:orderInCategory="100" app:showAsAction="always" />
 </menu>

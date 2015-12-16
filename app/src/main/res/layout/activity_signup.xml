@@ -13,7 +13,8 @@
         android:text="@string/login_username"
         android:id="@+id/textView"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="18dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -31,16 +32,17 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/signup_lastName"
         android:id="@+id/textView3"
-        android:layout_below="@+id/textView2"
-        android:layout_alignEnd="@+id/textView2" />
+        android:layout_alignBottom="@+id/signup_lastName"
+        android:layout_alignParentStart="true" />
 
     <Button
-        android:layout_width="match_parent"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/title_activity_signup"
-        android:id="@+id/signup_signup_Button"
-        android:layout_above="@+id/signup_back_button"
-        android:layout_alignParentStart="true" />
+        android:text="@string/signup_selectImg"
+        android:id="@+id/signup_selectPicture_button"
+        android:layout_below="@+id/signup_isMale"
+        android:layout_alignParentEnd="true" />
 
     <Button
         android:layout_width="match_parent"
@@ -50,23 +52,6 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true" />
 
-    <ImageView
-        android:layout_width="300px"
-        android:layout_height="300px"
-        android:id="@+id/signup_imageView"
-        android:src="@drawable/profile_img_placeholder"
-        android:layout_alignTop="@+id/signup_selectPicture_button"
-        android:layout_alignParentStart="true" />
-
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/signup_selectImg"
-        android:id="@+id/signup_selectPicture_button"
-        android:layout_centerVertical="true"
-        android:layout_alignEnd="@+id/signup_signup_Button" />
-
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -75,49 +60,31 @@
         android:layout_toEndOf="@+id/textView3"
         android:ems="10"/>
 
+    <ImageView
+        android:layout_width="300px"
+        android:layout_height="300px"
+        android:id="@+id/signup_imageView"
+        android:src="@drawable/profile_img_placeholder"
+        android:layout_below="@+id/textView6"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/title_activity_signup"
+        android:id="@+id/signup_signup_Button"
+        android:layout_above="@+id/signup_back_button"
+        android:layout_alignParentStart="true" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/login_password"
         android:id="@+id/textView5"
+        android:layout_marginTop="36dp"
         android:layout_below="@+id/textView3"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="28dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="@string/signin_reenterPassword"
-        android:id="@+id/textView6"
-        android:layout_below="@+id/textView5"
-        android:layout_alignStart="@+id/textView3" />
-
-    <Switch
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/profile_gender_View"
-        android:id="@+id/signup_isMale"
-        android:checked="false"
-        android:layout_below="@+id/textView6"
-        android:layout_alignEnd="@+id/textView3" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:id="@+id/signup_firstName"
-        android:layout_below="@+id/signup_username"
-        android:layout_toEndOf="@+id/textView2" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:id="@+id/signup_lastName"
-        android:layout_alignTop="@+id/textView2"
-        android:layout_toEndOf="@+id/textView2" />
+        android:layout_alignParentStart="true" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -128,6 +95,17 @@
         android:layout_alignBottom="@+id/textView5"
         android:layout_alignStart="@+id/signup_passwordAgain" />
 
+    <Switch
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/profile_gender_View"
+        android:id="@+id/signup_isMale"
+        android:checked="false"
+        android:textOff="Female"
+        android:textOn="Male"
+        android:layout_below="@+id/signup_passwordAgain"
+        android:layout_toEndOf="@+id/textView6" />
+
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -136,5 +114,31 @@
         android:id="@+id/signup_passwordAgain"
         android:layout_alignBottom="@+id/textView6"
         android:layout_toEndOf="@+id/textView6" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:id="@+id/signup_lastName"
+        android:layout_below="@+id/signup_firstName"
+        android:layout_alignStart="@+id/signup_firstName" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:id="@+id/signup_firstName"
+        android:layout_below="@+id/signup_username"
+        android:layout_toEndOf="@+id/textView2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/signin_reenterPassword"
+        android:id="@+id/textView6"
+        android:layout_below="@+id/signup_password"
+        android:layout_alignStart="@+id/textView3"
+        android:layout_marginTop="21dp" />
 
 </RelativeLayout>

@@ -27,4 +27,5 @@ dependencies {
     compile 'com.facebook.android:facebook-android-sdk:4.8.2'
     compile 'com.parse:parsetwitterutils-android:1.10.3'
     compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.parse:parseui-widget-android:0.0.1'
 }

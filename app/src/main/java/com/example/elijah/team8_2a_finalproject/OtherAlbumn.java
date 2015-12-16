@@ -25,11 +25,11 @@ import com.parse.SaveCallback;
 
 import java.util.List;
 
-public class UserAlbum extends AppCompatActivity {
+public class OtherAlbumn extends AppCompatActivity {
 
     ListView listView;
     List<ParseObject> dataList;
-    UserAlbumAdapter adapter;
+    OtherAlbumnAdapter adapter;
     ParseQueryAdapter<ParseObject> mainAdapter;
     ParseUser user;
 
@@ -42,10 +42,10 @@ public class UserAlbum extends AppCompatActivity {
 
         listView = (ListView) findViewById(R.id.listView);
 
-        mainAdapter = new ParseQueryAdapter<ParseObject>(UserAlbum.this, "albumn");
+        mainAdapter = new ParseQueryAdapter<ParseObject>(OtherAlbumn.this, "albumn");
         mainAdapter.setTextKey("name");
 
-        adapter = new UserAlbumAdapter(this, user.getObjectId().toString());
+        adapter = new OtherAlbumnAdapter(this, user.getObjectId().toString());
 
         listView.setAdapter(adapter);
 
@@ -70,7 +70,7 @@ public class UserAlbum extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_user_album, menu);
+        getMenuInflater().inflate(R.menu.menu_other_albumn, menu);
         return true;
     }
 
@@ -83,58 +83,20 @@ public class UserAlbum extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.profile) {
-            Intent intent = new Intent(UserAlbum.this, UserProfile.class);
+            Intent intent = new Intent(OtherAlbumn.this, UserProfile.class);
             startActivity(intent);
 
             return true;
         } else if(id == R.id.logout) {
             ParseUser.logOut();
-            Intent logoutIntent = new Intent(UserAlbum.this, Login.class);
-            Toast.makeText(UserAlbum.this, "Logout successful!", Toast.LENGTH_SHORT).show();
+            Intent logoutIntent = new Intent(OtherAlbumn.this, Login.class);
+            Toast.makeText(OtherAlbumn.this, "Logout successful!", Toast.LENGTH_SHORT).show();
             startActivity(logoutIntent);
-        } else if(id ==R.id.add_album) {
-            final EditText txtUrl = new EditText(this);
-            AlertDialog.Builder alert = new AlertDialog.Builder(this);
-            alert.setMessage("Enter the name of the albumn");
-            alert.setTitle("Add Albumn");
-
-            alert.setView(txtUrl);
-
-            alert.setPositiveButton("Add Albumn", new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog, int whichButton) {
-
-                    String value = txtUrl.getText().toString();
-                    if (value.toString().matches("")) {
-                        Toast.makeText(UserAlbum.this, "Please enter in a name", Toast.LENGTH_SHORT).show();
-                    } else {
-                        Toast.makeText(UserAlbum.this, "Albumn added", Toast.LENGTH_SHORT).show();
-                        ParseObject object = new ParseObject("albumn");
-                        object.put("name", value.toString());
-                        object.put("userID", user.getObjectId().toString());
-                        object.put("user_name", user.getUsername().toString());
-                        object.saveInBackground(new SaveCallback() {
-                            @Override
-                            public void done(ParseException e) {
-                                adapter.loadObjects();
-                            }
-                        });
-                    }
-                }
-            });
-
-            alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog, int whichButton) {
-                    // what ever you want to do with No option.
-                }
-            });
-
-            alert.show();
-
-        } else if(id == R.id.otherAlbumn) {
-            Intent intent = new Intent(UserAlbum.this, OtherAlbumn.class);
+        } else if(id == R.id.yourAlbumn) {
+            Intent intent = new Intent(OtherAlbumn.this, UserAlbum.class);
             startActivity(intent);
         } else if(id == R.id.chat) {
-            Intent intent = new Intent(UserAlbum.this, Chat.class);
+            Intent intent = new Intent(OtherAlbumn.this, Chat.class);
             startActivity(intent);
         }
 

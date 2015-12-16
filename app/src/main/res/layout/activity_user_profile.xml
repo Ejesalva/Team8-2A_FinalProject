@@ -31,8 +31,9 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/profile_gender_View"
         android:id="@+id/profile_gender_View"
-        android:layout_centerVertical="true"
-        android:layout_alignParentStart="true" />
+        android:layout_above="@+id/profile_done"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="67dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -60,5 +61,23 @@
         android:id="@+id/profile_edit"
         android:layout_alignTop="@+id/profile_done"
         android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/profile_name_detailed"
+        android:id="@+id/textView4"
+        android:layout_above="@+id/profile_gender_View"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/profile_name_editable"
+        android:id="@+id/profile_name_editable"
+        android:layout_above="@+id/profile_gender_Edit"
+        android:layout_alignStart="@+id/profile_gender_Edit" />
 
 </RelativeLayout>
